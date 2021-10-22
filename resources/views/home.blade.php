@@ -107,15 +107,12 @@
           <div class="px-0 lg:px-10 w-full lg:w-1/3 flex justify-start lg:justify-center">
             <ul>
               <li class="text-2xl mb-4">
-                <i class="las la-check-circle text-blue-500"></i>
                 <span> Update posts </span>
               </li>
               <li class="text-2xl mb-4">
-                <i class="las la-check-circle text-blue-500"></i>
                 <span>Delete Posts</span>
               </li>
               <li class="text-2xl">
-                <i class="las la-check-circle text-blue-500"></i>
                 <span> Amazing UI  </span>
               </li>
             </ul>

@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <title>Register • Wasocial</title>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">

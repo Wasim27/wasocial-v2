@@ -7,7 +7,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body>
-    <header class="pt-10 pb-36 bg-gradient-custom">
+    <header class="pt-10 pb-36 bg-gradient-custom bg-blue-100">
       <div class="container mx-auto px-4 lg:px-0">
         <nav class="w-full flex justify-between">
           <a href="/" class="transform transition duration-500 hover:scale-110">
@@ -16,19 +16,19 @@
           </a>
           <div class="">
             <a href="/login" class="ml-4 text-2xl lg:text-base mb-6 lg:mb-0 hover:text-green-500 btn">Login</a>
-            <a href="/register" class="ml-4 text-2xl lg:text-base mb-6 lg:mb-0 hover:text-green-500">Signup</a>
+            <a href="/register" class="ml-4 text-2xl lg:text-base mb-6 lg:mb-0 hover:text-green-500">Register</a>
           </div>
         </nav>
         <div class="mt-24 flex items-center ">
           <div class="w-full lg:w-1/2">
             <h1 class="text-4xl lg:text-5xl font-bold">Stay <span class="text-green-600">Connected</span> with Wasocial!</h1>
             <p class="my-4 mb-10">
-              A simple way to check what others are doing. Join the fun now!
+              A simple way to stay in touch with others. Join the fun now!
             </p>
             <a href="/register" class="p-4 bg-green-600 hover:bg-green-700 btn font-bold">Get started</a>
           </div>
           <div class="hidden lg:flex w-1/2 flex justify-end ">
-            <img class="transform transition duration-500 hover:scale-110" src="/images/home-vector.jpg" alt="" class="hidden lg:flex">
+            <img class="transform transition duration-500 hover:scale-110" src="/images/home-vector-1.png" alt="" class="hidden lg:flex">
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
     
     <section class="bg-green-300 py-24">
       <div class="container mx-auto px-4 lg:px-0">
-        <h2 class="text-center font-bold text-2xl lg:text-3xl mb-16">0 users are signed up to Wasocial</h2>
+        <h2 class="text-center font-bold text-2xl lg:text-3xl mb-16">{{ App\Models\User::all()->count() }} users are signed up to Wasocial</h2>
         <div  class="flex flex-wrap -mx-4">
           <div class="w-full lg:w-1/3 px-4">
             <div class="bg-white my-4 lg:my-0 py-20 px-10 rounded-xl flex flex-col items-center ">

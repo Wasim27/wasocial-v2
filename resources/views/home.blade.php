@@ -36,7 +36,7 @@
     
     <section class="bg-green-300 py-24">
       <div class="container mx-auto px-4 lg:px-0">
-        <h2 class="text-center font-bold text-2xl lg:text-3xl mb-16">{{ App\Models\User::all()->count() }} users are signed up to Wasocial</h2>
+        <h2 class="text-center font-bold text-2xl lg:text-3xl mb-16">{{ $userCount }} users are signed up to Wasocial</h2>
         <div  class="flex flex-wrap -mx-4">
           <div class="w-full lg:w-1/3 px-4">
             <div class="bg-white my-4 lg:my-0 py-20 px-10 rounded-xl flex flex-col items-center ">

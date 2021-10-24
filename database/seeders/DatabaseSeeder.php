@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         Post::truncate();
         $password = bcrypt('testacc123');
         $default_user = User::factory()->create([
+            'username' => 'John',
             'name' => 'John Doe',
             'email' => 'John@gmail.com',
             'password' => $password,

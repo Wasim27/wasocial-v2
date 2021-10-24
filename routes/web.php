@@ -23,8 +23,15 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard', [
-        'posts' => Post::all()
+        'posts' => Post::latest('posted_at')->get()
     ]);
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/profile/{user}', function (User $user) {
+    // dd($user);
+    return view('dashboard', [
+        'posts' => $user->posts
+    ]);
+});
 
 require __DIR__.'/auth.php';

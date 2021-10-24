@@ -47,9 +47,9 @@
 						@foreach ($posts as $post)
 						<div class="md:flex mt-4 ">
 								<section class="bg-white w-full rounded-lg p-4 sm:p-8">
-									<div class="flex flex-wrap">
+									<div class="flex flex-col flex-wrap">
 										<div>
-											<a class="text-green-600" href="/">{{ $post->user->name }}</a>
+											<a class="text-green-600" href="profile/{{ $post->user->id }}">{{ $post->user->name }}</a>
 										</div>
 											<div class="text-left">
 												{{ $post->body }}				

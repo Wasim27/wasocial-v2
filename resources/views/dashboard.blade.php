@@ -39,21 +39,27 @@
 						<div class="w-full my-6 flex items-center">
 							<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 						</div>
+						
 						<section
 							class="p-4 pt-0 sm:p-8 sm:pt-0 rounded-lg bg-indigo-600 md:flex md:flex-wrap items-center shadow-lg">
 						</section>
+
+						@foreach ($posts as $post)
 						<div class="md:flex mt-4 ">
-							<section class="h-full md:w-1/2 md:mr-4 rounded-lg">
-								<h2 class="my-6 text-gray-500 text-xs tracking-wider font-bold uppercase ">
-								</h2>
 								<section class="bg-white w-full rounded-lg p-4 sm:p-8">
 									<div class="flex flex-wrap">
-											<div class="text-center">
+										<div>
+											<a class="text-green-600" href="/">{{ $post->user->name }}</a>
+										</div>
+											<div class="text-left">
+												{{ $post->body }}				
 										</div>
 									</div>
 								</section>
-							</section>
 						</div>
+						@endforeach
+
+
 					</section>
 			</main>
 

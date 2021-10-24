@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                    </a>
+                    <img src="/images/logo.png" />
+                    <h1 class="ml-2 font-bold">Wasocial</h1>
                 </div>
 
                 <!-- Navigation Links -->

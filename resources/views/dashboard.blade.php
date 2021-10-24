@@ -1,5 +1,6 @@
 <x-app-layout>
 	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
+	
 		@include('layouts.sidebar')
 
 		<main class="bg-gray-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">

@@ -33,7 +33,9 @@ Route::get('/', [WelcomeController::class, 'index']);
 //     ]);
 // })->middleware(['auth'])->name('dashboard');
 
-Route::get('/feed', [PostController::class, 'index'])->name('dashboard');
+// Route::get('/posts', [PostController::class, 'index'])->name('dashboard');
+Route::resource('/feed', PostController::class);
+
 
 // Route::get('/profile/{user:username}', function (User $user) {
 //     return view('userProfile', [

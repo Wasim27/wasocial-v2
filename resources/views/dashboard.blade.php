@@ -10,8 +10,7 @@
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 					</div>
 					
-					{{-- @include('components.create-post') --}}
-
+					@include('components.create-post')
 
 					@foreach ($posts as $post)
 					<div class="md:flex mt-4 transform transition duration-500 hover:scale-110">
@@ -25,6 +24,10 @@
 											{{ $post->body }}				
 									</div>
 								</div>
+								{{-- <div class="absolute inset-y-20 right-5">
+								  <button class="px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" type="submit">LIKE</button>
+							  </div> --}}
+
 							</section>
 					</div>
 					@endforeach

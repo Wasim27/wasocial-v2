@@ -41,7 +41,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $curUser = auth()->user();
+        $request->validate([
+            'body' => 'required',
+        ]);
+
+        Post::create([
+            'user_id' => $curUser->id,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('feed.index');
     }
 
     /**

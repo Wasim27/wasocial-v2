@@ -3,16 +3,15 @@
 	
 		@include('layouts.sidebar')
 
-		<main class="bg-gray-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
+		<main class="bg-woodsmoke-200 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
 			<div class="w-full max-w-4xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 					</div>
 					
-					<section
-						class="p-4 pt-0 sm:p-8 sm:pt-0 rounded-lg bg-indigo-600 md:flex md:flex-wrap items-center shadow-lg">
-					</section>
+					{{-- @include('components.create-post') --}}
+
 
 					@foreach ($posts as $post)
 					<div class="md:flex mt-4 transform transition duration-500 hover:scale-110">

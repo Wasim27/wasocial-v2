@@ -1,4 +1,4 @@
-<aside class="bg-gray-200 w-full lg:w-24 p-2 px-4">
+<aside class="bg-woodsmoke-200 w-full lg:w-24 p-2 px-4">
   <ul class="flex items-center justify-center lg:h-full lg:flex-col">
     <a href="/feed">
       <li class="mb-2">
@@ -10,7 +10,7 @@
       </li>
    </a>
 
-   <a>
+   <a href="/profile">
     <li class="mb-2">
       <button class="p-3 px-3 bg-green-500 rounded hover:bg-green-100 hover:shadow-md">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

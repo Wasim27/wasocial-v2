@@ -1,9 +1,11 @@
 <?php
 
-use App\Models\User;
-use App\Models\Post;
 use Carbon\Carbon;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +25,24 @@ Route::get('/', function () {
 });
 
 Route::get('/feed', function () {
+    $curUser = auth()->user();
     return view('dashboard', [
         'posts' => Post::latest('posted_at')->get(),
     ]);
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/profile/{user:username}', function (User $user) {
-    // dd($user);
-    return view('dashboard', [
+    return view('userProfile', [
+        'profileName' => $user->username,
         'posts' => $user->posts,
+    ]);
+});
+
+Route::get('/profile', function (User $user) {
+    $curUser = auth()->user();
+    return view('my-profile', [
+        'userName' => $curUser->username,
+        'posts' => $curUser->posts,
     ]);
 });
 

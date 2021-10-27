@@ -1,5 +1,4 @@
   <form action="{{ route('feed.store') }}" method="POST">
-  {{-- <form method="POST"> --}}
     @csrf
 
     <div class="m-auto rounded-xl bg-white w-full md:w-2/3 lg:w-2/3">

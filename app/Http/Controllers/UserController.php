@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+        $curUser = auth()->user();
+        return view('my-profile', [
+            'userName' => $curUser->username,
+            'posts' => $curUser->posts->sortByDesc('posted_at'),
+        ]);
     }
 
     /**
@@ -57,7 +62,7 @@ class UserController extends Controller
         $curUser = auth()->user();
         return view('my-profile', [
             'userName' => $curUser->username,
-            'posts' => $curUser->posts,
+            'posts' => $curUser->posts->sortByDesc('posted_at'),
         ]);
     }
 
@@ -92,6 +97,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
     }
+
 }

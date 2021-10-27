@@ -54,6 +54,7 @@ Route::get('/profile/{user:username}', [UserController::class, 'showUserProfile'
 //     ]);
 // });
 
-Route::get('/profile', [UserController::class, 'showCurrentUserProfile']);
+// Route::get('/profile', [UserController::class, 'showCurrentUserProfile']);
+Route::resource('/profile', UserController::class);
 
 require __DIR__.'/auth.php';

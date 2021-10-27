@@ -4,7 +4,7 @@
 		@include('layouts.sidebar')
 
 		<main class="bg-woodsmoke-200 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
-			<div class="w-full max-w-4xl mx-auto">
+			<div class="w-full max-w-2xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
@@ -35,12 +35,7 @@
 		</main>
 
 
-		<aside class="z-30 absolute block bg-white w-12 w-full p-4 px-8 overflow-y-auto inset-0 / lg:relative lg:w-64  // lg:block lg:z-auto ">
-			<section>
-				<h2 class="my-6 text-xs tracking-wider font-bold uppercase">Popular Activity</h2>
-									Coming Soon
-			</section>
-		</aside>
+		@include('components.popular-activity')
 	</div>
 </div>
 </x-app-layout>

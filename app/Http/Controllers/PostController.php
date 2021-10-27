@@ -93,8 +93,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $findPost = Post::find($id);
+        $findPost->delete();
+        return redirect()->route('profile.index');
     }
 }

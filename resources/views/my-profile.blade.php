@@ -1,18 +1,22 @@
 <x-app-layout>
-	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
-	
-		@include('layouts.sidebar')
 
+	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
+		@include('layouts.sidebar')
 		<main class="bg-woodsmoke-200 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
 			<div class="w-full max-w-2xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">{{ $userName }}'s Profile (YOU)</h1>
 					</div>
-					
-					<section
-						class="p-4 pt-0 sm:p-8 sm:pt-0 rounded-lg bg-indigo-600 md:flex md:flex-wrap items-center shadow-lg">
+
+					@if (session()->has('message'))
+					<section>
+						<h1 class="text-xl text-green-700">
+						{{ session('message') }}
+						</h1>
 					</section>
+			   @endif
+
 					
 
 					@foreach ($posts as $post)

@@ -31,7 +31,7 @@ class EditPost extends ModalComponent
             'body' => $this->body,
         ]);
         $this->updateMode = false;
-        session()->flash('message', 'Users Updated Successfully.');
+        session()->flash('message', 'Post Updated Successfully.');
         return redirect()->route('profile.index');
     }
 }

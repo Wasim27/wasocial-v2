@@ -98,6 +98,8 @@ class PostController extends Controller
     {
         $findPost = Post::find($id);
         $findPost->delete();
+
+        session()->flash('message', 'Post Deleted Successfully.');
         return redirect()->route('profile.index');
     }
 }

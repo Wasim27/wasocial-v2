@@ -8,6 +8,6 @@
     </x-slot>
 
     <x-slot name="buttons">
-        <button wire:click.prevent="update()" type="submit">Submit</button>
+        <button class="bg-green-300 rounded-lg p-1 hover:bg-green-400" wire:click.prevent="update()" type="submit">Submit</button>
     </x-slot>
 </x-modal>

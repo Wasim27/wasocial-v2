@@ -3,7 +3,7 @@
 	
 		@include('layouts.sidebar')
 
-		<main class="bg-woodsmoke-200 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
+		<main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
 			<div class="w-full max-w-4xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">

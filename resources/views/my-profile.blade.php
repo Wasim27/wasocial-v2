@@ -2,7 +2,7 @@
 
 	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
 		@include('layouts.sidebar')
-		<main class="bg-woodsmoke-200 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
+		<main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
 			<div class="w-full max-w-2xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">
@@ -32,9 +32,6 @@
 									</div>
 								</div>
 
-								{{-- <button onclick='Livewire.emit("openModal", "hello-world", {{ json_encode(["post" => $post->id]) }})'>Edit User</button> --}}
-
-
 								<form action="{{ route('feed.destroy', $post->id) }}" 
 									method="POST">
 
@@ -48,7 +45,6 @@
 									@csrf
 									@method('DELETE')
 									<div class="absolute inset-y-16 right-5">
-										{{-- <button class="px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-red-600 bg-red-50 border-red-200 hover:bg-red-100 active:bg-red-200 focus:ring-red-300" onclick="return confirm('Are you sure you wish to delete this post?')" type="submit">DELETE</button> --}}
 										<button type="submit" class="cursor-pointer" onclick="return confirm('Are you sure you wish to delete this post?')">
 											<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="red">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />

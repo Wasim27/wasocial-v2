@@ -18,6 +18,7 @@ class UserController extends Controller
         $curUser = auth()->user();
         return view('my-profile', [
             'userName' => $curUser->username,
+            'profile_photo' => $curUser->profile_photo,
             'posts' => $curUser->posts->sortByDesc('posted_at'),
         ]);
     }
@@ -52,6 +53,7 @@ class UserController extends Controller
     public function showUserProfile(User $user)
     {
         return view('userProfile', [
+            'profile_photo' => $user->profile_photo,
             'profileName' => $user->username,
             'posts' => $user->posts,
         ]);
@@ -62,6 +64,7 @@ class UserController extends Controller
         $curUser = auth()->user();
         return view('my-profile', [
             'userName' => $curUser->username,
+            'profile_photo' => $curUser->profile_photo,
             'posts' => $curUser->posts->sortByDesc('posted_at'),
         ]);
     }

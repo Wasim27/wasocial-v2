@@ -6,9 +6,13 @@
 		<main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
 			<div class="w-full max-w-4xl mx-auto">
 				<section>
+					<div class="flex">
+						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="">
+
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">{{ $profileName }}'s Profile</h1>
 					</div>
+				</div>
 					
 					<section
 						class="p-4 pt-0 sm:p-8 sm:pt-0 rounded-lg bg-indigo-600 md:flex md:flex-wrap items-center shadow-lg">
@@ -32,8 +36,6 @@
 					@endforeach
 				</section>
 		</main>
-
-
 		
 	</div>
 </div>

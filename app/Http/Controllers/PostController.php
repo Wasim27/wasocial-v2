@@ -51,7 +51,9 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('feed.index');
+        session()->flash('message', 'New Post Created Successfully.');
+
+        return redirect()->route('profile.index');
     }
 
     /**
@@ -85,7 +87,6 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         dd($id);
-        //
     }
 
     /**

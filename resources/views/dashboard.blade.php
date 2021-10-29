@@ -1,14 +1,16 @@
 <x-app-layout>
-	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
-	
-		@include('layouts.sidebar')
+	<div class="relative w-full antialiased overflow-y-none md:flex md:flex-wrap">
+
+		  @include('layouts.sidebar')
 
 		<main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
+
 			<div class="w-full max-w-2xl mx-auto">
 				<section>
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 					</div>
+
 					
 					@include('components.create-post')
 
@@ -24,16 +26,11 @@
 											{{ $post->body }}				
 									</div>
 								</div>
-								{{-- <div class="absolute inset-y-20 right-5">
-								  <button class="px-4 py-2 rounded-md text-sm font-medium border shadow focus:outline-none focus:ring transition text-green-600 bg-green-50 border-green-200 hover:bg-green-100 active:bg-green-200 focus:ring-green-300" type="submit">LIKE</button>
-							  </div> --}}
-
 							</section>
 					</div>
 					@endforeach
 				</section>
 		</main>
-
 
 		@include('components.popular-activity')
 	</div>

@@ -17,14 +17,13 @@ class ProfilePhoto extends ModalComponent
         ]);
 
         $curUser = auth()->user();
-        // dd($curUser);
         $curUser->update([
             'profile_photo' => $this->profile_photo,
         ]);
         $this->updateMode = false;
+        session()->flash('message', 'Profile Picture Updated Successfully!');
         return redirect()->route('profile.index');
     }
-
 
     public function render()
     {

@@ -51,7 +51,7 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        session()->flash('message', 'New Post Created Successfully.');
+        session()->flash('message', 'New Post Created Successfully!');
 
         return redirect()->route('profile.index');
     }
@@ -74,7 +74,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        dd($post);
+        //
     }
 
     /**
@@ -86,7 +86,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id);
+        //
     }
 
     /**
@@ -100,7 +100,7 @@ class PostController extends Controller
         $findPost = Post::find($id);
         $findPost->delete();
 
-        session()->flash('message', 'Post Deleted Successfully.');
+        session()->flash('message', 'Post Deleted Successfully!');
         return redirect()->route('profile.index');
     }
 }

@@ -1,3 +1,10 @@
+<!-- 
+  References:
+
+  Freepik. Recruiting Page Design. tailwindcomponents. https://tailwindcomponents.com/component/recruiting-strategy
+
+  Tailwind CSS. Icons. heroicons. https://heroicons.com/
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -145,6 +152,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>

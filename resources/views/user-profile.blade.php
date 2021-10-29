@@ -9,7 +9,7 @@
 					<div class="flex">
 						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="">
 
-					<div class="w-full my-6 flex items-center">
+					<div class="w-full my-6 ml-4 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">{{ $profileName }}'s Profile</h1>
 					</div>
 				</div>
@@ -36,7 +36,6 @@
 					@endforeach
 				</section>
 		</main>
-		
 	</div>
 </div>
 </x-app-layout>

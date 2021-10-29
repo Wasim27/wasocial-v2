@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function showUserProfile(User $user)
     {
-        return view('userProfile', [
+        return view('user-profile', [
             'profile_photo' => $user->profile_photo,
             'profileName' => $user->username,
             'posts' => $user->posts,
@@ -77,7 +77,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        dd($user);
+        //
     }
 
     /**
@@ -100,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        //
     }
 
 }

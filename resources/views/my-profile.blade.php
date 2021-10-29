@@ -24,7 +24,7 @@
 
 					@if (session()->has('message'))
 					<section x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" x-show="show">
-						<h1 class="text-xl text-green-700">
+						<h1 class="text-xl mb-5 text-green-700">
 						{{ session('message') }}
 						</h1>
 					</section>

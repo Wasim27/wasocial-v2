@@ -15,10 +15,6 @@ class EditPost extends ModalComponent
         $this->body = $post->body;
     }
 
-    public function edit($id) {
-        //
-    }
-
     public function update()
     {
     $validate = $this->validate([
@@ -31,7 +27,7 @@ class EditPost extends ModalComponent
             'body' => $this->body,
         ]);
         $this->updateMode = false;
-        session()->flash('message', 'Post Updated Successfully.');
+        session()->flash('message', 'Post Edited Successfully!');
         return redirect()->route('profile.index');
     }
 }

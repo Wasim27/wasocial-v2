@@ -13,8 +13,6 @@ class Post extends Model
 
     protected $dates = ['posted_at'];
 
-    
-
    public function user()
    {
        return $this->belongsTo(User::class, 'user_id');

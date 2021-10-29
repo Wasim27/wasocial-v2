@@ -1,3 +1,8 @@
+<!-- 
+    References:
+    
+    Ancheta, W.A. (2021). Getting Started with Laravel Livewire. sitepoint. https://www.sitepoint.com/laravel-livewire-getting-started/
+-->
 <x-modal action="">
     <x-slot name="title">
         Edit Post

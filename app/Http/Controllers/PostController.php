@@ -52,7 +52,6 @@ class PostController extends Controller
         ]);
 
         session()->flash('message', 'New Post Created Successfully!');
-
         return redirect()->route('profile.index');
     }
 
@@ -97,10 +96,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $findPost = Post::find($id);
-        $findPost->delete();
-
-        session()->flash('message', 'Post Deleted Successfully!');
-        return redirect()->route('profile.index');
+        //
     }
 }

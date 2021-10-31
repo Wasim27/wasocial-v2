@@ -10,6 +10,10 @@ class DeletePost extends ModalComponent
 {
     public $post;
 
+    protected $rules = [
+        'post' => 'required',
+    ];
+
     public function mount(Post $post) {
         $this->post = $post;
     }

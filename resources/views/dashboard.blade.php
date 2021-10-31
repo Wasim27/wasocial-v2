@@ -10,7 +10,6 @@
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 					</div>
-
 					
 					@include('components.create-post')
 

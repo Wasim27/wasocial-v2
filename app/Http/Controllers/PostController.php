@@ -15,7 +15,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $curUser = auth()->user();
         $posts = Post::latest('posted_at')->get();
 
         return view('dashboard', [

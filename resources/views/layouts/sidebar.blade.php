@@ -1,5 +1,5 @@
 {{-- <aside class="bg-woodsmoke-200 fixed h-full w-full lg:w-24 p-2 px-4"> --}}
-<aside class="hidden sm-flex z-30 fixed bg-woodsmoke-200 w-12 w-full p-2 px-4 overflow-y-auto inset-0 / lg:fixed lg:w-24  // lg:block lg:z-auto">
+<aside class="sm-flex relative w-12 w-full p-2 px-4 overflow-y-auto inset-0 lg:w-20  //">
 
   <ul class="flex items-center justify-center lg:h-full lg:flex-col">
     <a href="/feed">

@@ -1,7 +1,7 @@
   <form action="{{ route('feed.store') }}" method="POST">
     @csrf
 
-    <div class="m-auto rounded-xl bg-white w-full md:w-2/3 lg:w-2/3">
+    <div class="m-auto rounded-xl bg-white w-full sm:w-2/3 lg:w-2/3">
       <div class="flex p-4">
         <div>
           {{-- <img class="rounded-full w-14" src="" /> --}}

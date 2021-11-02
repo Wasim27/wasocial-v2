@@ -34,14 +34,9 @@
 
 					@foreach ($posts as $post)
 					<div class="md:flex mt-4 transform transition duration-500 hover:scale-105">
-							<section class="bg-white w-full rounded-lg p-4 sm:p-8">
+							<section class="w-full rounded-lg p-2 sm:p-0">
 								@include('components.post')
-
 								@include('components.edit-delete')
-
-								<div class="flex">
-									@include('components.like-dislike-post')
-								</div>
 							</section>
 					</div>
 					@endforeach

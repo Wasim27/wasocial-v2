@@ -25,6 +25,14 @@ class User extends Authenticatable
         'profile_photo',
     ];
 
+    public function timeline()
+    {
+        return Post::where('user_id')
+          ->withLikes()
+          ->latest();
+    }
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

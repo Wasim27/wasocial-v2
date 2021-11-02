@@ -15,10 +15,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest('posted_at')->get();
+        $curUser = auth()->user();
+        $posts = Post::withLikes('posted_at')->get()->sortByDesc('posted_at');
 
         return view('dashboard', [
             'posts' => $posts,
+            'current_user' => $curUser
         ]);
     }
 

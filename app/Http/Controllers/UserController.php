@@ -16,10 +16,13 @@ class UserController extends Controller
     public function index()
     {
         $curUser = auth()->user();
+        $posts = Post::withLikes('posted_at')->where('user_id', '=', $curUser->id)->get()->sortByDesc('posted_at');
+        
         return view('my-profile', [
+            'current_user' => $curUser,
             'userName' => $curUser->username,
             'profile_photo' => $curUser->profile_photo,
-            'posts' => $curUser->posts->sortByDesc('posted_at'),
+            'posts' => $posts,
         ]);
     }
 
@@ -52,10 +55,15 @@ class UserController extends Controller
      */
     public function showUserProfile(User $user)
     {
+        $curUser = auth()->user();
+
+        $posts = Post::withLikes('posted_at')->where('user_id', '=', $user->id)->get()->sortByDesc('posted_at');
+
         return view('user-profile', [
+            'current_user' => $curUser,
             'profile_photo' => $user->profile_photo,
             'profileName' => $user->username,
-            'posts' => $user->posts,
+            'posts' => $posts,
         ]);
     }
 

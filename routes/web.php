@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PostLikesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,10 @@ Route::resource('/feed', PostController::class);
 Route::get('/profile/{user:username}', [UserController::class, 'showUserProfile']);
 
 Route::resource('/profile', UserController::class);
+
+Route::post('/posts/{post}/like', [PostLikesController::class, 'store']);
+Route::delete('/posts/{post}/like', [PostLikesController::class, 'destroy']);
+
+
 
 require __DIR__.'/auth.php';

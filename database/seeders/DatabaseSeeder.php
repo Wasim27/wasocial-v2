@@ -7,6 +7,7 @@
 */
 namespace Database\Seeders;
 
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -33,24 +34,17 @@ class DatabaseSeeder extends Seeder
             'profile_photo' => 'https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg'
         ]);
 
-        for ($i = 0; $i < 5; $i++) {
-          Post::create([
-              'user_id' => $default_user->id,
-              'body' => 'Lorem ipsum dolor sit amet.'
-          ]);
-        }
+        Post::factory(8)->create([
+          'user_id' => $default_user->id,
+      ]);
 
-        for ($i = 0; $i < 2; $i++){
-          $user = User::factory()->create([
-              'profile_photo' => 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg'
-          ]);
+        for ($i = 0; $i < 30; $i++){
+          $user = User::factory()->create();
+          Like::factory()->create();
 
-          for ($j = 0; $j < 5; $j++) {
-            Post::create([
+            Post::factory(6)->create([
               'user_id' => $user->id,
-              'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere lorem sapien, dapibus sodales massa ullamcorper eu. Aenean in elit lorem. Cras non vulputate lorem. Pellentesque blandit ut mi et tristique.'
           ]);
-        }
       }
       DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class PostLikesController extends Controller
 {
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+
     public function store(Post $post)
     {
         $current_user = auth()->user();
@@ -15,6 +22,12 @@ class PostLikesController extends Controller
         return back();
     }
 
+    /**
+     * Destroy a resource in storage.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Post $post)
     {
         $current_user = auth()->user();

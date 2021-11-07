@@ -37,5 +37,4 @@ Route::delete('/posts/{post}/like', [PostLikesController::class, 'destroy']);
 Route::get('/users', [UserController::class, 'showAllUsers']);
 Route::get('/search', [UserController::class, 'search']);
 
-
 require __DIR__.'/auth.php';

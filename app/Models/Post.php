@@ -46,18 +46,12 @@ class Post extends Model
 
    public function isLikedBy(User $user)
    {
-    return $this->likes()->where('user_id', $user->id)->where('liked', true)->count();
-
-    //    return $this->likes()->where('user_id', $user->id)->exists();
-    //   return (bool) $user->likes->where('post_id', $this->id)->where('liked', true)->count();
+       return $this->likes()->where('user_id', $user->id)->where('liked', true)->count();
    }
 
    public function isDislikedBy(User $user)
    {
-    return $this->likes()->where('user_id', $user->id)->where('liked', false)->count();
-
-    //    return !$this->likes()->where('user_id', $user->id)->exists();
-    //   return (bool) $user->likes->where('post_id', $this->id)->where('liked', false)->count();
+       return $this->likes()->where('user_id', $user->id)->where('liked', false)->count();
    }
 
    public function likes()

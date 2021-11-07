@@ -15,7 +15,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class LivewireModalTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * A livewire feature test example.
      *
      * @return void
      */

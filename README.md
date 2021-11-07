@@ -163,7 +163,6 @@ The use of tailwind allowed me to design this UI in a time-saving manner. Hover 
 <br>
 <br>
 <br>
-<br>
 
 
 <!-- Registration -->
@@ -178,6 +177,7 @@ As you can see, users must enter all the relevant information and follow guideli
   <img src="readme_images/registration.png" alt="Registration Page" width="" height="500">
 </div>
 
+<!-- Login -->
 ### Login
 Similarly to the registration page, Laravel Breeze handles all this for us. Providing the user gives us the correct details, the website will authenticate them and send them to the feed page. Alternatively, they will have already been sent to the feed page after registration.
 
@@ -218,8 +218,6 @@ The feed is where users can do various tasks:
   <img src="readme_images/feed-examples.png" alt="Feed Examples" width="500" height="">
 </div>
 
-<br>
-<br>
 
 <!-- Users Profile -->
 ### Users Profile
@@ -232,8 +230,6 @@ The feed is where users can do various tasks:
   <img src="readme_images/users-profile.png" alt="Users Profile Page" width="500" height="">
 </div>
 
-<br>
-<br>
 
 <!-- My Profile -->
 ### My Profile
@@ -304,10 +300,6 @@ Search results for "John"
   <img src="readme_images/users-search.png" alt="User Search Example" width="500" height="">
 </div>
 
-<br>
-<h1>
-<br>
-
 
 <!-- Extra Implementations Information -->
 ## Extra Implementations Information
@@ -321,10 +313,6 @@ Default user details:
 Email: John@gmail.com
 
 Password: testacc123
-
-<br>
-<h1>
-<br>
 
 
 <!-- TESTING -->
@@ -357,8 +345,7 @@ To run tests simply run:
 
 <br>
 <br>
-<strong>IMPORTANT: MUST REFRESH AND RESEED THE DATABASE FOR THE WEBSITE WORK AFTER RUNNING TESTS</strong>
-
+<strong>IMPORTANT: MUST REFRESH AND RESEED THE DATABASE FOR THE WEBSITE TO WORK AFTER RUNNING TESTS</strong>
 <br>
 
   ```
@@ -366,10 +353,6 @@ To run tests simply run:
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<br>
-<h1>
-<br>
 
 
 <!-- CONTACT -->
@@ -382,10 +365,6 @@ University Email: u1970064@unimail.hud.ac.uk
 Project Link: [https://github.com/hudds-awp2021-cht2520/assignment-01-Wasim27](https://github.com/hudds-awp2021-cht2520/assignment-01-Wasim27)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<br>
-<h1>
-<br>
 
 
 <!-- REFERENCES -->

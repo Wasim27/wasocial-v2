@@ -1,5 +1,7 @@
 <!--
-https://tailwindcomponents.com/component/responsive-table-5
+Reference:
+
+Sufyan Farea Responsive Table. [Tailwind Table]. https://tailwindcomponents.com/component/responsive-table-5
 -->
 
 <section class="container mx-auto p-6 font-mono">
@@ -22,7 +24,7 @@ https://tailwindcomponents.com/component/responsive-table-5
             <td class="px-4 py-3 border">
               <div class="flex items-center text-sm">
                 <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                  <img class="object-cover w-full h-full rounded-full" src="{{ $user->profile_photo }}" alt="" loading="lazy" />
+                  <img class="object-cover w-full h-full rounded-full" src="{{ $user->profile_photo }}" alt="profile_photo" onerror="this.onerror=null;this.src='./images/default.png';" loading="lazy" />
                   <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                 </div>
                 <div>

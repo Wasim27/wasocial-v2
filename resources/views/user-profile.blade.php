@@ -7,7 +7,7 @@
 			<div class="w-full max-w-4xl mx-auto">
 				<section>
 					<div class="flex">
-						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="">
+						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="profile_photo" onerror="this.onerror=null;this.src='../images/default.png';">
 
 					<div class="w-full my-6 ml-4 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">{{ $profileName }}'s Profile</h1>

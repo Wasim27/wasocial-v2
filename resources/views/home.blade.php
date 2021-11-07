@@ -48,42 +48,36 @@
           <div class="w-full lg:w-1/3 px-4">
             <div class="bg-white my-4 lg:my-0 py-20 px-10 rounded-xl flex flex-col items-center ">
               <img class="rounded-full mb-6" src="/images/working.png" alt="">
-              <span class="font-bold text-blue-900 text-lg">User 1</span>
+              <span class="font-bold text-blue-900 text-lg">{{ $user->first()->name }}</span>
               <small class="text-gray-500">
-                Member
+                User
               </small>
               <p class="text-center leading-10 mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Sed nec sagittis dolor. Maecenas quam nunc, 
-                 tincidunt quis facilisis ut.
+                I love Wasocial! It lets me stay connected with my friends and family!
               </p>
             </div>
           </div>
           <div class="w-full lg:w-1/3 px-4">
             <div class="bg-white my-4 lg:my-0 py-20 px-10 rounded-xl flex flex-col items-center ">
               <img class="rounded-full mb-6" src="/images/working.png" alt="">
-              <span class="font-bold text-blue-900 text-lg">User 2</span>
+              <span class="font-bold text-blue-900 text-lg">{{ $user->skip(1)->first()->name }}</span>
               <small class="text-gray-500">
-                Member
+                User
               </small>
               <p class="text-center leading-10 mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Sed nec sagittis dolor. Maecenas quam nunc, 
-                 tincidunt quis facilisis ut.
+                The ability to see my post likes shows how much people love my stories.
               </p>
             </div>
           </div>
           <div class="w-full lg:w-1/3 px-4">
             <div class="bg-white my-4 lg:my-0 py-20 px-10 rounded-xl flex flex-col items-center ">
               <img class="rounded-full mb-6" src="/images/working.png" alt="">
-              <span class="font-bold text-blue-900 text-lg">User 3</span>
+              <span class="font-bold text-blue-900 text-lg">{{ $user->skip(2)->first()->name }}</span>
               <small class="text-gray-500">
-                Member
+                User
               </small>
               <p class="text-center leading-10 mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Sed nec sagittis dolor. Maecenas quam nunc, 
-                 tincidunt quis facilisis ut.
+                The UI is simple and easy to use. Everything is clear to navigate around.
               </p>
             </div>
           </div>

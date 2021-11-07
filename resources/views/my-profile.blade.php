@@ -7,7 +7,7 @@
 				<section>
 
 					<div class="flex">
-						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="">
+						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="profile_photo" onerror="this.onerror=null;this.src='./images/default.png';">
 
 					<div>
 							<a onclick='Livewire.emit("openModal", "profile-photo")'>

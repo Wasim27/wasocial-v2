@@ -1,13 +1,14 @@
 <?php
-
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Http\Controllers\PostLikesController;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserExperienceTest extends TestCase
 {
@@ -71,5 +72,36 @@ class UserExperienceTest extends TestCase
         ]));
 
         $this->assertTrue(Post::whereBody('Hello I am doing nothing today!')->exists());
+    }
+
+    public function test_post_can_be_liked_and_disliked()
+    {
+        $user = User::factory()->create();
+        $default_user = User::factory()->create([
+            'username' => 'Pete12344',
+            'name' => 'Pete Doe',
+            'email' => 'Pete@gmail.com',
+            'password' => 'testacc123',
+        ]);
+
+        $post = (Post::create([
+            'user_id' => $user->id,
+            'body' => 'Test Likes!'
+        ]));
+
+        $post->like($default_user);
+        $this->assertDatabaseHas('likes', [
+            'user_id' => $default_user->id,
+            'post_id' => $post->id,
+            'liked' => '1',
+        ]);
+
+        $post->dislike($default_user);
+
+        $this->assertDatabaseHas('likes', [
+            'user_id' => $default_user->id,
+            'post_id' => $post->id,
+            'liked' => '0',
+        ]);
     }
 }

@@ -25,12 +25,12 @@ class User extends Authenticatable
         'profile_photo',
     ];
 
-    public function timeline()
-    {
-        return Post::where('user_id')
-          ->withLikes()
-          ->latest();
-    }
+    // public function timeline()
+    // {
+    //     return Post::where('user_id')
+    //       ->withLikes()
+    //       ->latest();
+    // }
 
 
     /**

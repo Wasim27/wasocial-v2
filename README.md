@@ -50,7 +50,9 @@
 <!-- PROJECT DESCRIPTION -->
 ## Project Description
 
-<img src="readme_images/Product_Image.png" alt="Product Image" width="500" height="">
+<div align="center">
+  <img src="readme_images/Product_Image.png" alt="Product Image" width="500" height="">
+</div>
 
 Wasocial is a website that allows users to create and view posts in an efficient manner. Similar to the likes of Facebook, Twitter and other social networks.
 
@@ -135,10 +137,6 @@ Follow these simple steps to set up your project locally.
     ```sh
     php artisan serve
     ```
-
-<br>
-<h1></h1>
-<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -290,6 +288,8 @@ Clicking the sidebar button which has two users as the icons takes you to the us
 <div align="center">
   <img src="readme_images/users-table.png" alt="Users Table" width="500" height="">
 </div>
+
+<br>
 
 Search results for "John"
 

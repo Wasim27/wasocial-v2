@@ -10,6 +10,14 @@
 					<div class="w-full my-6 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">Feed</h1>
 					</div>
+
+					@if (session()->has('message'))
+					<section x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" x-show="show">
+						<h1 class="text-xl mb-5 text-green-700">
+						{{ session('message') }}
+						</h1>
+					</section>
+			   @endif
 					
 					@include('components.create-post')
 

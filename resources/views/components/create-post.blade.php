@@ -4,7 +4,6 @@
     <div class="m-auto rounded-xl bg-white w-full sm:w-2/3 lg:w-2/3">
       <div class="flex p-4">
         <div>
-          {{-- <img class="rounded-full w-14" src="" /> --}}
         </div>
 
         <div class="ml-3 flex flex-col w-full">

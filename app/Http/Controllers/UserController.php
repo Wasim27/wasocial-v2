@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $curUser = auth()->user();
-        $posts = Post::withLikes('posted_at')->where('user_id', '=', $curUser->id)->get()->sortByDesc('posted_at');
+        $posts = Post::withLikes('created_at')->where('user_id', '=', $curUser->id)->get()->sortByDesc('created_at');
         
         return view('my-profile', [
             'current_user' => $curUser,
@@ -79,7 +79,7 @@ class UserController extends Controller
     {
         $curUser = auth()->user();
 
-        $posts = Post::withLikes('posted_at')->where('user_id', '=', $user->id)->get()->sortByDesc('posted_at');
+        $posts = Post::withLikes('created_at')->where('user_id', '=', $user->id)->get()->sortByDesc('created_at');
 
         return view('user-profile', [
             'current_user' => $curUser,
@@ -101,7 +101,7 @@ class UserController extends Controller
         return view('my-profile', [
             'userName' => $curUser->username,
             'profile_photo' => $curUser->profile_photo,
-            'posts' => $curUser->posts->sortByDesc('posted_at'),
+            'posts' => $curUser->posts->sortByDesc('created_at'),
         ]);
     }
 }

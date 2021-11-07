@@ -15,7 +15,7 @@
            <h2 class="text-lg font-semibold text-green-600 -mt-1">{{ $post->user->username }} </h2>
         </a>
         </div>
-        <p class="text-gray-700">{{ $post->posted_at->format('d M, Y') }}</p>
+        <p class="text-gray-700">{{ $post->created_at->format('d M, Y') }}</p>
         <p class="mt-3 text-gray-700 text-sm">
            {{ $post->body }}
         </p>

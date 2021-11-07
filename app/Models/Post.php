@@ -13,7 +13,7 @@ class Post extends Model
 
     protected $guarded = [];
 
-    protected $dates = ['posted_at'];
+    protected $dates = ['created_at'];
 
    public function user()
    {

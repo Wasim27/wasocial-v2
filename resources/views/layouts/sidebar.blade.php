@@ -1,3 +1,9 @@
+<!--
+  Reference:
+
+  Tailwind CSS. Icons. heroicons. https://heroicons.com/
+-->
+
 <aside class="sm-flex relative w-12 w-full p-2 px-4 overflow-y-auto inset-0 lg:w-20  //">
 
   <ul class="flex items-center justify-center lg:h-full lg:flex-col">

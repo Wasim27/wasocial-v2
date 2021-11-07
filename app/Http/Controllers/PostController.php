@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $curUser = auth()->user();
-        $posts = Post::withLikes('posted_at')->get()->sortByDesc('posted_at');
+        $posts = Post::withLikes('created_at')->get()->sortByDesc('created_at');
 
         return view('dashboard', [
             'posts' => $posts,

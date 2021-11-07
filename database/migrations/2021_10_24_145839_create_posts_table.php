@@ -18,7 +18,6 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id');
             $table->string('body');
             $table->timestamps();
-            $table->timestamp('posted_at')->useCurrent();
         });
     }
 

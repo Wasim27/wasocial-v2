@@ -1,4 +1,6 @@
 <!--
+    Reference:
+
     Hermans, P.H. (2021). How to build modals with Laravel and Livewire. philio. https://philo.dev/laravel-modals-with-livewire/
 -->
 @props(['formAction' => false])

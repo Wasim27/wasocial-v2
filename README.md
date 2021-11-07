@@ -72,7 +72,7 @@ The main goal was to keep the website simplistic and not over-complicate any fea
 <!-- Technologies Used -->
 ### Technologies Used
 
-Here are some of the frameworks, libraries and kits used which I made efficient use of whilst creating the website. Using these certain technologies saves time allowing me to focus on the main features of the website.
+Here are some of the frameworks, libraries and kits used which I made efficient use of whilst creating the website. Using these certain technologies saves time, allowing me to focus on the main features of the website.
 
 * [Laravel](https://laravel.com)
 * [Laravel Breeze](https://laravel.com/docs/8.x/starter-kits)
@@ -175,9 +175,13 @@ As you can see, users must enter all the relevant information and follow guideli
   <img src="readme_images/registration.png" alt="Registration Page" width="" height="500">
 </div>
 
+<br>
+<br>
+<br>
+
 <!-- Login -->
 ### Login
-Similarly to the registration page, Laravel Breeze handles all this for us. Providing the user gives us the correct details, the website will authenticate them and send them to the feed page. Alternatively, they will have already been sent to the feed page after registration.
+Similarly to the registration page, Laravel Breeze handles the login for us. Providing the user gives us the correct details, the website will authenticate them and send them to the feed page. Alternatively, they will have already been sent to the feed page after registration.
 
 Note: Setting up a mail server allows for extra features such as forgot password and email verification.
 <br>
@@ -188,6 +192,9 @@ Note: Setting up a mail server allows for extra features such as forgot password
   <img src="readme_images/login.png" alt="Login Page" width="" height="">
 </div>
 
+<br>
+<br>
+<br>
 
 <!-- Feed -->
 ### Feed
@@ -196,7 +203,7 @@ The feed is where users can do various tasks:
 * Create posts: simply write your post in "What's happening?" and click the post button
 * Like or dislike a post
 * Logout by clicking your name at the top right and logout
-* Navigate to a users profile by clicking their name.
+* Navigate to a users profile by clicking their name
 * Navigate to the feed, personal profile, and all users table using the buttons on the left sidebar
 <br>
 <br>
@@ -209,17 +216,20 @@ The feed is where users can do various tasks:
 <br>
 <br>
 
-<p>I am watching the NFL right now so why not make a post about it? Also, likes and dislikes are highlighted for the user to see what their response was and can change between the two if necessary.</p>
+<p>I am watching the NFL right now so why not make a post about it? Also, likes and dislikes are highlighted for the user to see what their response was and can change between the two if necessary. The count will increase as more users like the post.</p>
 <br>
 
 <div align="center">
   <img src="readme_images/feed-examples.png" alt="Feed Examples" width="500" height="">
 </div>
 
+<br>
+<br>
+<br>
 
 <!-- Users Profile -->
 ### Users Profile
-<p>By clicking a users name you can view all their posts and again like or dislike them.</p>
+<p>By clicking a username you can view all their posts and again like or dislike them.</p>
 
 <br>
 <br>
@@ -228,6 +238,9 @@ The feed is where users can do various tasks:
   <img src="readme_images/users-profile.png" alt="Users Profile Page" width="500" height="">
 </div>
 
+<br>
+<br>
+<br>
 
 <!-- My Profile -->
 ### My Profile
@@ -236,11 +249,11 @@ By clicking the single user icon on the sidebar, this takes you to the logged in
 Further tasks can be done here:
 * Create posts (again)
 * View likes and dislikes (again)
-* Change profile image
+* Change profile image: click the upload button next to the profile image
 * Edit posts: click the edit button next to the post
 * Delete posts: click the trash button next to the post
 
-Upload a profile photo heres one I am using https://www.vhv.rs/dpng/d/491-4918790_lion-logo-royalty-free-copyright-free-lion-logo.png and the changes will be made.
+Upload a profile photo here is one I am using https://www.vhv.rs/dpng/d/491-4918790_lion-logo-royalty-free-copyright-free-lion-logo.png and the changes will be made.
 <br>
 <br>
 
@@ -259,7 +272,7 @@ Upload a profile photo heres one I am using https://www.vhv.rs/dpng/d/491-491879
 <br>
 <br>
 
-Clicking the edit button will show a modal which has the body of the post to edit in the text area. This allows users to make edits and then click submit.
+Clicking the edit button will show a modal which has the body of the post to edit in the text area. This allows users to make edits and then submit the changes.
 
 <br>
 
@@ -268,7 +281,7 @@ Clicking the edit button will show a modal which has the body of the post to edi
 </div>
 <br>
 
-Clicking the trash bin will ask for confirmation that you really want to delete it. No one wants to accidentally click that amazing post they created!
+Clicking the trash bin will ask for confirmation that you really want to delete it. No one wants to accidentally delete that amazing post they created!
 
 <br>
 
@@ -278,10 +291,13 @@ Clicking the trash bin will ask for confirmation that you really want to delete 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<br>
+<br>
+<br>
 
 <!-- Users Table -->
 ### Users Table
-Clicking the sidebar button which has two users as the icons takes you to the user list section. Here you can view all the users along with some details. Also, you can search for users here and go to their profile. This makes it easier to look for users.
+Clicking the sidebar button which has two users as the icon takes you to the user list section. Here, you can view all registered users along with some details. Also, you can search for users here and go to their profile. This makes it easier to search for profiles.
 
 <br>
 
@@ -300,6 +316,9 @@ Search results for "John"
   <img src="readme_images/users-search.png" alt="User Search Example" width="500" height="">
 </div>
 
+<br>
+<br>
+<br>
 
 <!-- Extra Implementations Information -->
 ## Extra Implementations Information
@@ -314,14 +333,17 @@ Email: John@gmail.com
 
 Password: testacc123
 
+<br>
+<br>
+<br>
 
 <!-- TESTING -->
 ## Testing
 Testing is done using PHPUnit as this is what Laravel provides us by default.
-Again, Laravel Breeze automatically created the authentication tests. I have created my own tests which can be viewed within <strong> LivewireModalTest.php </strong> and <strong>UserExperienceTest.php</strong> files within the tests directory.
+Again, Laravel Breeze automatically created the authentication tests. I have created my own tests which can be viewed within <strong> LivewireModalTest.php </strong> and <strong>UserExperienceTest.php</strong> files in the tests directory.
 
 My tests: 
-* Livewire offers its own tools for testing my components. Hence, I have created tests for: whether the profile photo can be updated and if posts can be deleted
+* Livewire offers its own tools for testing my components. Hence, I have created tests for whether the profile photo can be updated and if posts can be deleted
 
 * UserExperienceTest includes:
   * All views can be rendered
@@ -345,7 +367,7 @@ To run tests simply run:
 
 <br>
 <br>
-<strong>IMPORTANT: MUST REFRESH AND RESEED THE DATABASE FOR THE WEBSITE TO WORK AFTER RUNNING TESTS</strong>
+<strong>IMPORTANT: MUST MIGRATE AND RESEED THE DATABASE FOR THE WEBSITE TO WORK AFTER RUNNING TESTS</strong>
 <br>
 
   ```
@@ -358,7 +380,7 @@ To run tests simply run:
 <!-- CONTACT -->
 ## Contact
 
-Wasim Ramzan
+Name: Wasim Ramzan
 
 University Email: u1970064@unimail.hud.ac.uk
 

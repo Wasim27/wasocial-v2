@@ -325,16 +325,28 @@ Search results for "John"
 Implementation information not mentioned previously:
 * Laravel livewire was used to create the modals for uploading a profile photo, as well as editing and deleting posts. Functions include rendering the modal, tracking the post and making the relevant changes/updates. For editing the target post, a function was created to mount the posts body to the modal. <strong>See App\Http\Livewire</strong>
 
-* Success messages appear after doing a CRUD task. These only appear for 5 seconds.
+* Success messages appear after doing a CRUD task. These only appear for 5 seconds
 
-* Factories and seeders were used to create fake users, posts and likes. Fake likes can be viewed on the profile page of the default user.
+* Factories and seeders were used to create fake users, posts and likes. Fake likes can be viewed on the profile page of the default user
+
+  Default user details:
+  ```
+  Email: John@gmail.com
+
+  Password: testacc123
+  ```
+* Responsive design throughout with accessibility markup elements
+
+<br>
+<br>
+
+<p align="center">
+  <img src="readme_images/responsive1.png" width="408" />
+  <img src="readme_images/responsive2.png" width="500" /> 
+</p>
 
 
-Default user details:
 
-Email: John@gmail.com
-
-Password: testacc123
 
 <br>
 <br>

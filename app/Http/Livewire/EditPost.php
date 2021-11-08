@@ -17,20 +17,20 @@ class EditPost extends ModalComponent
 
     public function update()
     {
-    $validate = $this->validate([
-        'body' => 'required',
-    ]);
-
-    if ($this->id) {
-        $post = Post::find($this->post->id);
-        $post->update([
-            'body' => $this->body,
+        $validate = $this->validate([
+            'body' => 'required',
         ]);
-        $this->updateMode = false;
-        session()->flash('message', 'Post Edited Successfully!');
-        return redirect()->route('profile.index');
+
+        if ($this->id) {
+            $post = Post::find($this->post->id);
+            $post->update([
+                'body' => $this->body,
+            ]);
+            $this->updateMode = false;
+            session()->flash('message', 'Post Edited Successfully!');
+            return redirect()->route('profile.index');
+        }
     }
-}
 
     public function render()
     {

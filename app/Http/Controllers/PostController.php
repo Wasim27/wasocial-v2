@@ -43,7 +43,6 @@ class PostController extends Controller
         ]);
 
         session()->flash('message', 'New Post Created Successfully!');
-        // return redirect()->route('profile.feed');
         return back();
     }
 }

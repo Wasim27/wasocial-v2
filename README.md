@@ -345,9 +345,6 @@ Implementation information not mentioned previously:
   <img src="readme_images/responsive2.png" width="500" /> 
 </p>
 
-
-
-
 <br>
 <br>
 <br>

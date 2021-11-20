@@ -8,10 +8,16 @@
 				<section>
 					<div class="flex">
 						<img class="rounded-full mb-6 w-20" src="{{ $profile_photo }}" alt="profile_photo" onerror="this.onerror=null;this.src='../images/default.png';">
-
 					<div class="w-full my-6 ml-4 flex items-center">
 						<h1 class="text-xl font-semibold flex-auto text-black">{{ $profileName }}'s Profile</h1>
 					</div>
+
+					<form method="POST" action="/profile/{{ $user->name }}/follow">
+						@csrf
+						<div class="mt-3">
+							{!! $current_user->following($user) ? '<button type="submit" class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300">Unfollow</button>' : '<button type="submit" class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300">Follow</button>' !!}
+						</div>
+				  </form>
 				</div>
 					
 					<section

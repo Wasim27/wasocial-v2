@@ -43,7 +43,7 @@
 				</section>
 		</main>
 
-		@include('components.popular-activity')
+		@include('components.following-list')
 
 	</div>
 </div>

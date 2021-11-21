@@ -35,6 +35,9 @@
 					@endforeach
 				</section>
 		</main>
+
+		@include('components.other-users-following-list')
+
 	</div>
 </div>
 </x-app-layout>

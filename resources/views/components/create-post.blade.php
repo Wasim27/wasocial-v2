@@ -7,7 +7,7 @@
         </div>
 
         <div class="ml-3 flex flex-col w-full">
-          <textarea name="body" id="body" maxlength="255" placeholder="What's happening?" class="w-full text-xl resize-none outline-none h-32"></textarea>
+          <textarea name="body" id="body" maxlength="255" placeholder="What's happening?" class="whitespace-pre-wrap w-full text-xl resize-none outline-none h-32"></textarea>
         </div>
       </div>
 

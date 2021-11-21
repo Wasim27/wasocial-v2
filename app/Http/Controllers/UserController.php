@@ -21,6 +21,7 @@ class UserController extends Controller
         $posts = Post::withLikes('created_at')->where('user_id', '=', $curUser->id)->get()->sortByDesc('created_at');
         
         return view('my-profile', [
+            'follow' => $curUser->followingCount(),
             'current_user' => $curUser,
             'userName' => $curUser->username,
             'profile_photo' => $curUser->profile_photo,
@@ -82,7 +83,9 @@ class UserController extends Controller
         $posts = Post::withLikes('created_at')->where('user_id', '=', $user->id)->get()->sortByDesc('created_at');
 
         return view('user-profile', [
+            'follow' => $user->followingCount(),
             'current_user' => $curUser,
+            'user' => $user,
             'profile_photo' => $user->profile_photo,
             'profileName' => $user->username,
             'posts' => $posts,
@@ -95,13 +98,14 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function showCurrentUserProfile(User $user)
-    {
-        $curUser = auth()->user();
-        return view('my-profile', [
-            'userName' => $curUser->username,
-            'profile_photo' => $curUser->profile_photo,
-            'posts' => $curUser->posts->sortByDesc('created_at'),
-        ]);
-    }
+    // public function showCurrentUserProfile(User $user)
+    // {
+    //     $curUser = auth()->user();
+    //     return view('my-profile', [
+    //         'follow_count' => $curUser->followingCount(),
+    //         'userName' => $curUser->username,
+    //         'profile_photo' => $curUser->profile_photo,
+    //         'posts' => $curUser->posts->sortByDesc('created_at'),
+    //     ]);
+    // }
 }

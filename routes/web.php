@@ -12,6 +12,7 @@ use Symfony\Component\Console\Input\Input;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostLikesController;
 use App\Http\Controllers\UsersSearchController;
+use App\Http\Controllers\LoginSecurityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,22 @@ Route::delete('/posts/{post}/like', [PostLikesController::class, 'destroy']);
 
 Route::get('/users', [UserController::class, 'showAllUsers']);
 Route::get('/search', [UserController::class, 'search']);
+
+Route::group(['prefix'=>'2fa'], function(){
+  Route::get('/',[LoginSecurityController::class, 'show2faForm']);
+  Route::post('/generateSecret',[LoginSecurityController::class, 'generate2faSecret'])->name('generate2faSecret');
+  Route::post('/enable2fa',[LoginSecurityController::class, 'enable2fa'])->name('enable2fa');
+  Route::post('/disable2fa',[LoginSecurityController::class, 'disable2fa'])->name('disable2fa');
+
+  // 2fa middleware
+  Route::post('/2faVerify', function () {
+      return redirect(URL()->previous());
+  })->name('2faVerify')->middleware('2fa');
+});
+
+// test middleware
+Route::get('/test_middleware', function () {
+  return "2FA middleware work!";
+})->middleware(['auth', '2fa']);
 
 require __DIR__.'/auth.php';

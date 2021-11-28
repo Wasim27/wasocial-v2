@@ -92,6 +92,7 @@ class UserController extends Controller
         ]);
     }
 
+
     /**
      * Display the current user profile.
      *

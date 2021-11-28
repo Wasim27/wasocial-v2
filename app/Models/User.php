@@ -74,4 +74,10 @@ class User extends Authenticatable
     {
         return count($this->follows);
     }
+
+
+    public function loginSecurity()
+    {
+        return $this->hasOne(LoginSecurity::class);
+    }
 }

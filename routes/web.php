@@ -27,13 +27,16 @@ use App\Http\Controllers\LoginSecurityController;
 
 Route::get('/', [WelcomeController::class, 'index']);
 
-Route::resource('/feed', PostController::class);
+Route::group(['middleware' => ['auth', '2fa']], function() {
+  Route::resource('/feed', PostController::class);
+  // Route::get('/feed', [PostController::class, 'index']);
+  // Route::post('store', [PostController::class, 'store'])->name('feed.store');
+});
 
 Route::get('/profile/{user:username}', [UserController::class, 'showUserProfile']);
 
 Route::resource('/profile', UserController::class);
 Route::post('/profile/{user:name}/follow', [FollowController::class, 'store']);
-// Route::delete('/profile/{user:name}/unfollow', [FollowController::class, 'destroy']);
 
 Route::post('/posts/{post}/like', [PostLikesController::class, 'store']);
 Route::delete('/posts/{post}/like', [PostLikesController::class, 'destroy']);
@@ -47,13 +50,11 @@ Route::group(['prefix'=>'2fa'], function(){
   Route::post('/enable2fa',[LoginSecurityController::class, 'enable2fa'])->name('enable2fa');
   Route::post('/disable2fa',[LoginSecurityController::class, 'disable2fa'])->name('disable2fa');
 
-  // 2fa middleware
   Route::post('/2faVerify', function () {
       return redirect(URL()->previous());
   })->name('2faVerify')->middleware('2fa');
 });
 
-// test middleware
 Route::get('/test_middleware', function () {
   return "2FA middleware work!";
 })->middleware(['auth', '2fa']);

@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use PragmaRX\Google2FALaravel\Middleware;
 use App\Http\Middleware\LoginSecurityMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 

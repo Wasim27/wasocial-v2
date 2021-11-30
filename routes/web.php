@@ -51,7 +51,7 @@ Route::group(['prefix'=>'2fa'], function(){
   Route::post('/disable2fa',[LoginSecurityController::class, 'disable2fa'])->name('disable2fa');
 
   Route::post('/2faVerify', function () {
-      return redirect(URL()->previous());
+      return redirect('/feed');
   })->name('2faVerify')->middleware('2fa');
 });
 

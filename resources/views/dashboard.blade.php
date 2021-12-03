@@ -1,3 +1,5 @@
+<title>Wasocial ● Feed</title>
+
 <x-app-layout>
 	<div class="relative w-full antialiased overflow-y-none h-screen md:flex md:flex-wrap">
 

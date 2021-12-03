@@ -1,17 +1,17 @@
 <title>Wasocial ● 2fa</title>
 
 <x-app-layout>
-    <div class="w-full flex flex-col justify-center items-center mt-0">
+    <div class="relative w-full antialiased overflow-y-none h-screen md:flex md:flex-wrap">
 
         @include('layouts.sidebar')
 
-        <main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
+        <main class="flex items-center bg-woodsmoke-100 flex-1 p-4 shadow-inner mx-auto overflow-y-auto md:h-full">
 
-            <div class="container">
+            <div class="flex flex-wrap bg-woodsmoke-200 container p-5 w-full max-w-2xl mx-auto rounded-3xl items-center">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <div class="card">
-                            <div class="card-header"><strong>Two Factor Authentication</strong></div>
+                            <div class="card-header flex justify-center"><strong>Two Factor Authentication</strong></div>
                             <div class="card-body">
                                 @if (session('error'))
                                     <div class="alert alert-danger">
@@ -39,7 +39,7 @@
                                     the code: <code>{{ $data['secret'] }}</code><br />
                                     {!! $data['google2fa_url'] !!}
                                     <br /><br />
-                                    2. Enter the pin from Google Authenticator app:<br /><br />
+                                    2. Enter the pin from Google Authenticator:<br /><br />
                                     <form class="form-horizontal" method="POST" action="{{ route('enable2fa') }}">
                                         {{ csrf_field() }}
                                         <div class="form-group{{ $errors->has('verify-code') ? ' has-error' : '' }}">
@@ -52,7 +52,7 @@
                                                 </span>
                                             @endif
                                         </div>
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="block tracking-widest uppercase text-center shadow bg-green-600 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mx-auto mt-3">
                                             Enable 2FA
                                         </button>
                                     </form>

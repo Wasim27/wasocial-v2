@@ -29,8 +29,6 @@ Route::get('/', [WelcomeController::class, 'index']);
 
 Route::group(['middleware' => ['auth', '2fa']], function() {
   Route::resource('/feed', PostController::class);
-  // Route::get('/feed', [PostController::class, 'index']);
-  // Route::post('store', [PostController::class, 'store'])->name('feed.store');
 });
 
 Route::get('/profile/{user:username}', [UserController::class, 'showUserProfile']);

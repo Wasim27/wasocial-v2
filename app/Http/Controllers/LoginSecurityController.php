@@ -88,7 +88,6 @@ class LoginSecurityController extends Controller
      */
     public function disable2fa(Request $request){
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-            // The passwords matches
             return redirect()->back()->with("error","Your password does not matches with your account password. Please try again.");
         }
 

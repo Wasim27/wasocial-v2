@@ -1,17 +1,16 @@
 <title>Wasocial ● 2fa</title>
 
 <x-app-layout>
-    <div class="w-full flex flex-col justify-center items-center mt-0">
+    <div class="relative w-full antialiased overflow-y-none h-screen md:flex md:flex-wrap bg-gradient-to-r from-gray-200 to-gray-600">
 
         @include('layouts.sidebar')
 
-        <main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">
-
-            <div class="container">
-                <div class="row justify-content-md-center">
+        <main class="grid place-items-center md:h-screen mx-auto">
+            <div class="flex items-center border-black">
+                <div class="row justify-content-md-center bg-gray-100 rounded-3xl p-10">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header"><strong>Two Factor Authentication</strong></div>
+                            <div class="card-header flex justify-center"><strong>Two Factor Authentication</strong></div>
                             <div class="card-body">
                                 @if (session('error'))
                                     <div class="alert alert-danger">
@@ -36,10 +35,10 @@
                                     </form>
                                 @elseif(!$data['user']->loginSecurity->google2fa_enable)
                                     1. Scan this QR code with your Google Authenticator App. Alternatively, you can use
-                                    the code: <code>{{ $data['secret'] }}</code><br />
+                                    the code: <strong><code>{{ $data['secret'] }}</code><br /></strong>
                                     {!! $data['google2fa_url'] !!}
                                     <br /><br />
-                                    2. Enter the pin from Google Authenticator app:<br /><br />
+                                    2. Enter the pin from Google Authenticator:<br /><br />
                                     <form class="form-horizontal" method="POST" action="{{ route('enable2fa') }}">
                                         {{ csrf_field() }}
                                         <div class="form-group{{ $errors->has('verify-code') ? ' has-error' : '' }}">
@@ -52,7 +51,8 @@
                                                 </span>
                                             @endif
                                         </div>
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit"
+                                            class="block tracking-widest uppercase text-center shadow bg-green-600 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mx-auto mt-3">
                                             Enable 2FA
                                         </button>
                                     </form>
@@ -75,7 +75,9 @@
                                                 </span>
                                             @endif
                                         </div>
-                                        <button type="submit" class="block tracking-widest uppercase text-center shadow bg-red-600 hover:bg-red-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mx-auto">Disable 2FA</button>
+                                        <button type="submit"
+                                            class="block tracking-widest uppercase text-center shadow bg-red-600 hover:bg-red-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mx-auto">Disable
+                                            2FA</button>
                                     </form>
                                 @endif
                             </div>
@@ -84,6 +86,5 @@
                 </div>
             </div>
         </main>
-    </div>
     </div>
 </x-app-layout>

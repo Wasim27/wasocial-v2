@@ -35,6 +35,18 @@ services:
     networks:
       - app-network
 
+  #Mailhog Service
+  mailserver:
+    image: mailhog/mailhog
+    container_name: mailhog
+    tty: true
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+    restart: on-failure
+    networks:
+      - app-network
+
   #MySQL Service
   db:
     image: mysql:5.7.22

@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use LivewireUI\Modal\ModalComponent;
 
-
 class DeletePost extends ModalComponent
 {
     public $post;

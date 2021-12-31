@@ -6,7 +6,7 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\Follow;
 
-class FollowControllerTest extends TestCase 
+class FollowTest extends TestCase 
 {
 
   public function test_user_can_follow()

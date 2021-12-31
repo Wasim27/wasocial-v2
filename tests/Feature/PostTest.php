@@ -8,21 +8,8 @@ use App\Models\User;
 use Livewire\Livewire;
 use App\Http\Livewire\DeletePost;
 
-class PostControllerTest extends TestCase
+class PostTest extends TestCase
 {
-  public function test_feed_screen_can_be_rendered()
-  {
-      $user = User::factory()->create();
-
-      $this->post('/login', [
-          'email' => $user->email,
-          'password' => 'password',
-      ]);
-
-      $response = $this->get('/feed');
-      $response->assertStatus(200);
-  }
-
   public function test_post_can_be_created()
   {
       $user = User::factory()->create();

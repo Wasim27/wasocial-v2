@@ -5,7 +5,7 @@ use Tests\TestCase;
 use App\Models\Post;
 use App\Models\User;
 
-class PostsLikesControllerTest extends TestCase
+class PostLikesTest extends TestCase
 {
     /**
      * A basic feature test example.

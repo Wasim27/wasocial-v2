@@ -4,7 +4,7 @@
   JermineJunior Post / Card. [post card with a user image]. https://tailwindcomponents.com/component/post-card
 -->
 
-<div class="flex bg-white shadow-lg rounded-lg mx-4 my-2 w-full">
+<div class="flex bg-white shadow-lg rounded-lg my-2">
   <div class="flex items-start px-4 py-6 break-all">
 
      <img class="w-12 h-12 rounded-full object-cover mr-4 shadow" src="{{ $post->user->profile_photo }}" alt="profile_photo" onerror="this.onerror=null;this.src='../images/default.png';">

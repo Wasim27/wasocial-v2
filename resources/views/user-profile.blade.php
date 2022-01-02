@@ -1,3 +1,5 @@
+<title>Wasocial ● User Profile</title>
+
 <x-app-layout>
 	<div class="relative w-full antialiased h-screen overflow-y-none md:flex md:flex-wrap">
 	

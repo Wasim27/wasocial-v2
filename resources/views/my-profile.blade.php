@@ -1,5 +1,6 @@
-<x-app-layout>
+<title>Wasocial ● Profile</title>
 
+<x-app-layout>
 	<div class="relative w-full antialiased overflow-y-none md:flex md:flex-wrap h-screen">
 		@include('layouts.sidebar')
 		<main class="bg-woodsmoke-100 h-full flex-1 p-4 shadow-inner mx-auto overflow-y-auto">

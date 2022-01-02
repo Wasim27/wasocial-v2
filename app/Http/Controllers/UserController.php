@@ -91,21 +91,4 @@ class UserController extends Controller
             'posts' => $posts,
         ]);
     }
-
-    /**
-     * Display the current user profile.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    // public function showCurrentUserProfile(User $user)
-    // {
-    //     $curUser = auth()->user();
-    //     return view('my-profile', [
-    //         'follow_count' => $curUser->followingCount(),
-    //         'userName' => $curUser->username,
-    //         'profile_photo' => $curUser->profile_photo,
-    //         'posts' => $curUser->posts->sortByDesc('created_at'),
-    //     ]);
-    // }
 }

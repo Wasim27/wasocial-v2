@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -18,9 +19,24 @@ class PostController extends Controller
         $curUser = auth()->user();
         $posts = Post::withLikes('created_at')->get()->sortByDesc('created_at');
 
+        $topUsersJoinQuery = DB::table('follows')
+        ->select('following_id', DB::raw('COUNT(following_id) AS count'))
+        ->groupBy('following_id'); 
+
+        $top_users = DB::table('users')->select('*')
+        ->join(DB::raw('(' . $topUsersJoinQuery->toSql() . ') i'), function ($join)
+        {
+            $join->on('i.following_id', '=', 'users.id');
+        })
+        ->orderBy('count', 'desc')
+        ->select('name', 'username', 'profile_photo')
+        ->take(10)
+        ->get();
+
         return view('dashboard', [
             'posts' => $posts,
-            'current_user' => $curUser
+            'current_user' => $curUser,
+            'top_users' => $top_users
         ]);
     }
 

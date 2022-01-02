@@ -12,7 +12,7 @@
   <p align="center">
     By Wasim Ramzan (u1970064)
     <br />
-    <strong>Advanced Web Programming · Assignment 1</strong>
+    <strong>Advanced Web Programming · Assignment 2</strong>
     <br />
     <strong>University of Huddersfield</strong>
     <br />
@@ -28,6 +28,7 @@
     <li>
       <a href="#project-description">Project Description</a>
       <ul>
+        <li><a href="#advanced-features-implemented">Advanced Features Implemented</a></li>
         <li><a href="#technologies-used">Technologies Used</a></li>
       </ul>
     </li>
@@ -54,17 +55,19 @@
   <img src="readme_images/Product_Image.png" alt="Product Image" width="500" height="">
 </div>
 
-Wasocial is a website that allows users to create and view posts in an efficient manner. Similar to the likes of Facebook, Twitter and other social networks.
+Wasocial is a website that allows users to create and view posts in an efficient manner. Similar to the likes of Facebook, Twitter and other social networks. \
+\
+During the second assignment my main focus was on implementing advanced features.
 
-Features Implemented:
-* Create, read, update and delete posts
-* Upload profile picture
-* Register and login with authentication
-* Like and dislike posts
-* View personal and other users posts
-* Search for users
+<br>
 
-The main goal was to keep the website simplistic and not over-complicate any features. There are of course many more features to come, such as comments, following system and more!
+### Advanced Features Implemented
+
+* Following and unfollowing feature
+* Google Two Factor Authentication
+* Docker
+* Build & Deploy to AWS Lightsail (Nginx) \
+... and other changes to some features
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -88,74 +91,68 @@ Here are some of the frameworks, libraries and kits used which I made efficient 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Follow these simple steps to set up your project locally.
+Docker is now the best way to get the project setup allowing for efficient management of the dependencies.
 
 ### Prerequisites
 
-* Composer
-  ```
-  See official docs https://getcomposer.org/
-  ```
-
-* npm
-  ```sh
-  npm install -g npm
-  ```
+* Docker & Docker-compose
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone git@github.com:hudds-awp2021-cht2520/assignment-01-Wasim27.git
+   git clone git@github.com:hudds-awp2021-cht2520/assignment-02-Wasim27.git
    ```
-2. Configure the web server to point at the /public directory
-   
-3. Create a DB in MySQL
 
-4. Install the PHP dependencies
-   ```sh
-   composer install
+2. Build Dockerfile and start containers
    ```
-5. Install the node dependencies
-   ```sh
-   npm install
+   docker-compose build && docker-compose up -d
    ```
-6. Build the front end assets
+   
+3. Install the PHP dependencies
    ```sh
-   npm run dev
+   docker-compose exec -T app composer install
    ```
-7. Make the .env file (copy .env example to .env and fill in the correct DB details)
-8. Migrate the database and seed
-   ```sh
-   php artisan migrate:fresh --seed
-   ```
-9. Generate application encryption key
-   ```sh
-   php artisan key:generate
-   ```
-10. Go to your web server address or run php artisan serve
-    ```sh
-    php artisan serve
+
+4. Make the .env file (copy .env example to .env no changes are required)
+
+5. Provide permissions to the following folders
     ```
+    sudo chmod -R 777 storage/
+    sudo chmod -R 777 bootstrap/cache/
+    ```
+
+5. Migrate the database and seed
+   ```sh
+   docker-compose exec app php artisan migrate:fresh --seed
+   ```
+6. Generate application encryption key
+   ```sh
+   docker-compose exec app php artisan key:generate
+   ```
+7. Go to the web server hosted by nginx \
+http://localhost:8088/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+<br>
 
+### Following and unfollowing feature
+<p>Users can now follow and unfollow eachother. This is a feature we see popular on social media where you can follow profiles of others. There is a lot of scalabiltiy with this feature. For example, I could further implement features such as messaging your followers, viewing only posts of those you follow and privacy options.
 
-### Homepage
-<p>Clean homepage with a nice and colourful user interface. Here you have the links to login and register on the top right.
+This was out of scope of my advanced features task as my interest was mainly on features that I aren't already similar to the ones I have done already.
 
-Extra information such as the amount of users signed up and testiomonials from users can be viewed here.
+You can view your followers on the right sidebar and click on them to go to their profile. This helps keep track on their lifestyle. Also, on the feed page the top 10 most followed users will be displayed.
 
-The use of tailwind allowed me to design this UI in a time-saving manner. Hover over the vector image and see what happens!
+Simply visit any users profile and follow them (or unfollow if you have already followed them)!
 </p>
 <br>
 
 <div align="center">
-  <img src="readme_images/homepage.png" alt="Homepage" width="700" height="">
+  <img src="readme_images/following.png" alt="Homepage" width="700" height="">
 </div>
 
 <br>
@@ -164,15 +161,21 @@ The use of tailwind allowed me to design this UI in a time-saving manner. Hover 
 
 
 <!-- Registration -->
-### Registration
-Laravel Breeze is a starter kit which creates both the registration and login pages for us. This includes authentication and also uses tailwind as the styling framework.
+### Google Two Factor Authentication
+Two factor authentication is essential for most websites as it enhances your security. Users are now able to use the Google Authenticator app as a secondary login security feature. Simply click on the security badge on the sidebar click generate secret key and follow the instructions to get setup!
 
-As you can see, users must enter all the relevant information and follow guidelines in order for their details to be validated. I added a username field as this is important in social network websites to differentiate users - as users may have the same name. In addition, simple regex was used to prevent usernames from having spaces which we tend not to see on similar websites. 
+Once setup users must verify their code to access the website. If the code expires on the app you may have to refresh the page and try again.
+
+Pragmarx Google2fa a password authentication package provides me with the ability to generate OTP and verify these are correct.
 <br>
 <br>
 
 <div align="center">
-  <img src="readme_images/registration.png" alt="Registration Page" width="" height="500">
+  <img src="readme_images/auth-1.png" alt="Setup Auth Page" width="" height="400">
+</div>
+
+<div align="center">
+  <img src="readme_images/auth-verify.png" alt="Verify Auth Page" width="" height="400">
 </div>
 
 <br>
@@ -180,16 +183,25 @@ As you can see, users must enter all the relevant information and follow guideli
 <br>
 
 <!-- Login -->
-### Login
-Similarly to the registration page, Laravel Breeze handles the login for us. Providing the user gives us the correct details, the website will authenticate them and send them to the feed page. Alternatively, they will have already been sent to the feed page after registration.
+### Docker
+Docker allows me to create containers which contain my dependencies. It also provides the ability to run code in any environment. Docker has made it easier for me to build, deploy and manage containers.
 
-Note: Setting up a mail server allows for extra features such as forgot password and email verification.
+On the other hand, docker compose enables me to configure server and storage dependencies. \
+Here are the containers that I have running:
+
+* MySQL; database creation and management
+* Nginx; webserver to host my site
+* Mailhog; fake SMTP server for email testing
+* PHP; run PHP commands in the container
 <br>
 <br>
-<br>
+
+Apart from Mailhog the others should be self explanatory. We can use mailhog to test emails such as the forgotten password feature. If we were to send an email password reset link then it can be viewed on mailhog.
+
+To view them after resetting a registered users password visit http://localhost:8025/
 
 <div align="center">
-  <img src="readme_images/login.png" alt="Login Page" width="" height="">
+  <img src="readme_images/mailhog.png" alt="Login Page" width="" height="">
 </div>
 
 <br>
@@ -197,136 +209,34 @@ Note: Setting up a mail server allows for extra features such as forgot password
 <br>
 
 <!-- Feed -->
-### Feed
+### AWS Lightsail
 
-The feed is where users can do various tasks:
-* Create posts: simply write your post in "What's happening?" and click the post button
-* Like or dislike a post
-* Logout by clicking your name at the top right and logout
-* Navigate to a users profile by clicking their name
-* Navigate to the feed, personal profile, and all users table using the buttons on the left sidebar
-<br>
-<br>
+IMPORTANT: Docker will have the fully functioning website. AWS Lightsail will work for most features but does not have an email server. Also, it has not been fully tested so use Docker for most tasks.
 
-<div align="center">
-<img src="readme_images/feed.png" alt="Feed Page" width="1000" height="">
-</div>
+AWS Lightsail similarly allows me to build and deploy my application but this time on the cloud. AWS Lightsail is a virtual private server provider. They provide many services such as database storage and hosting my application on the cloud. This is better for scalability as it does not require me to purchase a physical server myself.
 
-<br>
-<br>
-<br>
+This would particularly work well if my website was to go live. For example, I could manage domain names, backup my website and conduct many other management functions. To summarise, it would allow me to manage my app efficiently.
 
-<p>I am watching the NFL right now so why not make a post about it? Also, likes and dislikes are highlighted for the user to see what their response was and can change between the two if necessary. The count will increase as more users like the post.</p>
-<br>
-
-<div align="center">
-  <img src="readme_images/feed-examples.png" alt="Feed Examples" width="500" height="">
-</div>
-
-<br>
-<br>
-<br>
-
-<!-- Users Profile -->
-### Users Profile
-<p>By clicking a username you can view all their posts and again like or dislike them.</p>
-
-<br>
-<br>
-
-<div align="center">
-  <img src="readme_images/users-profile.png" alt="Users Profile Page" width="500" height="">
-</div>
-
-<br>
-<br>
-<br>
-
-<!-- My Profile -->
-### My Profile
-By clicking the single user icon on the sidebar, this takes you to the logged in users profile page.
-
-Further tasks can be done here:
-* Create posts (again)
-* View likes and dislikes (again)
-* Change profile image: click the upload button next to the profile image
-* Edit posts: click the edit button next to the post
-* Delete posts: click the trash button next to the post
-
-Upload a profile photo here is one I am using https://www.vhv.rs/dpng/d/491-4918790_lion-logo-royalty-free-copyright-free-lion-logo.png and the changes will be made.
-<br>
-<br>
-
-
-<div align="center">
-  <img src="readme_images/upload-profile-photo.png" alt="Upload Profile Modal" width="500" height="">
-</div>
-
-<br>
-<br>
-
-<div align="center">
-  <img src="readme_images/profile-photo-success.png" alt="Upload Profile Success" width="400" height="">
-</div>
-
-<br>
-<br>
-
-Clicking the edit button will show a modal which has the body of the post to edit in the text area. This allows users to make edits and then submit the changes.
+Currently, using the free tier as it is suitable for my needs. Again, I chose Nginx to host my webserver as seen below.
 
 <br>
 
 <div align="center">
-  <img src="readme_images/edit-post.png" alt="Edit Post Modal" width="500" height="">
+<img src="readme_images/Instance.png" alt="Lightsail Instance" width="1000" height="">
 </div>
-<br>
-
-Clicking the trash bin will ask for confirmation that you really want to delete it. No one wants to accidentally delete that amazing post they created!
-
-<br>
 
 <div align="center">
-  <img src="readme_images/delete-post.png" alt="Delete Post Modal" width="500" height="">
-</div>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<br>
-<br>
-<br>
-
-<!-- Users Table -->
-### Users Table
-Clicking the sidebar button which has two users as the icon takes you to the user list section. Here, you can view all registered users along with some details. Also, you can search for users here and go to their profile. This makes it easier to search for profiles.
-
-<br>
-
-<div align="center">
-  <img src="readme_images/users-table.png" alt="Users Table" width="500" height="">
+<img src="readme_images/Database.png" alt="Lightsail Databse" width="1000" height="">
 </div>
 
 <br>
 
-Search results for "John"
+To view my website simply visit http://18.170.36.139/ or https://18.170.36.139/ (HTTPS)
 
 <br>
 <br>
 
-<div align="center">
-  <img src="readme_images/users-search.png" alt="User Search Example" width="500" height="">
-</div>
-
-<br>
-<br>
-<br>
-
-<!-- Extra Implementations Information -->
 ## Extra Implementations Information
-Implementation information not mentioned previously:
-* Laravel livewire was used to create the modals for uploading a profile photo, as well as editing and deleting posts. Functions include rendering the modal, tracking the post and making the relevant changes/updates. For editing the target post, a function was created to mount the posts body to the modal. <strong>See App\Http\Livewire</strong>
-
-* Success messages appear after doing a CRUD task. These only appear for 5 seconds
-
 * Factories and seeders were used to create fake users, posts and likes. Fake likes can be viewed on the profile page of the default user
 
   Default user details:
@@ -335,38 +245,24 @@ Implementation information not mentioned previously:
 
   Password: testacc123
   ```
-* Responsive design throughout with accessibility markup elements
-
-<br>
-<br>
-
-<p align="center">
-  <img src="readme_images/responsive1.png" width="408" />
-  <img src="readme_images/responsive2.png" width="500" /> 
-</p>
-
-<br>
-<br>
 <br>
 
 <!-- TESTING -->
 ## Testing
 Testing is done using PHPUnit as this is what Laravel provides us by default.
-Again, Laravel Breeze automatically created the authentication tests. I have created my own tests which can be viewed within <strong> LivewireModalTest.php </strong> and <strong>UserExperienceTest.php</strong> files in the tests directory.
 
-My tests: 
-* Livewire offers its own tools for testing my components. Hence, I have created tests for whether the profile photo can be updated and if posts can be deleted
-
-* UserExperienceTest includes:
-  * All views can be rendered
-  * Posts can be created
-  * Posts can be liked/disliked
+Test updates:
+* Changed test files to contain their respective models/controller methods rather than mixing them
+* Further tests for views (2fa and other pages)
+* Tests for the following/unfollowing feature
+* Tests must be run in the docker container
+* The 2fa middleware can be tested in the routes by visiting /test_middleware
 
 I have done this through assertions and checking if values exist or do not exist within the database.
 
-To run tests simply run:
+To run tests simply run in the docker container:
 
-    php artisan test    
+    docker-compose exec app php artisan test   
 
 ... and all tests should pass!
 
@@ -374,7 +270,7 @@ To run tests simply run:
 <br>
 
 <div align="center">
-  <img src="readme_images/tests.png" alt="Test Success" width="500" height="">
+  <img src="readme_images/docker-tests.png" alt="Test Success" width="500" height="">
 </div>
 
 <br>
@@ -383,7 +279,7 @@ To run tests simply run:
 <br>
 
   ```
-  php artisan migrate:fresh --seed
+  docker-compose exec app php artisan test
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -409,5 +305,7 @@ Most references are inlined within the code however here are some that assisted 
 * Vhvrs. Lion Logo Royalty-free. https://www.vhv.rs/viewpic/hJJomiJ_lion-logo-royalty-free-copyright-free-lion-logo/
 * Jeffrey Way (2020). Build a Like/Dislike System. Laracasts. https://laracasts.com/series/laravel-6-from-scratch/episodes/67?page=1
 * Akhtar Munir (2020). search with pagination is not working in laravel. [Answer]. Stackoverflow. https://stackoverflow.com/questions/61771858/search-with-pagination-is-not-working-in-laravel
+* Stephen Afam-Osemene (2020). How to Add Google's Two Factor Authentication to Laravel. https://www.digitalocean.com/community/tutorials/how-to-add-googles-two-factor-authentication-to-laravel
+* Akshay Krison (2021). How to Deploy Laravel APP on AWS LightSail. https://aws.plainenglish.io/deploy-laravel-app-on-aws-lightsail-with-nginx-instance-and-managed-mysql-db-643670e2e24d
 
 <p align="right">(<a href="#top">back to top</a>)</p>

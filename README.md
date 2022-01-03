@@ -113,10 +113,10 @@ Docker is now the best way to get the project setup allowing for efficient manag
    
 3. Install the PHP dependencies
    ```sh
-   docker-compose exec -T app composer install
+   docker-compose exec app composer install
    ```
 
-4. Make the .env file (copy .env example to .env no changes are required)
+4. Make the .env file (copy .env.example to .env no changes are required)
 
 5. Provide permissions to the following folders
     ```

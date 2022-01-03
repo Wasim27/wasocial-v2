@@ -42,6 +42,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#extra-implementations-information">Extra Implementations Information</a></li>
     <li><a href="#testing">Testing</a></li>
+    <li><a href="#reflective-analysis">Reflective Analysis</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#references">References</a></li>
   </ol>
@@ -61,6 +62,7 @@ During the second assignment my main focus was on implementing advanced features
 
 <br>
 
+<!-- Advanced Features Implemented -->
 ### Advanced Features Implemented
 
 * Following and unfollowing feature
@@ -160,7 +162,7 @@ Simply visit any users profile and follow them (or unfollow if you have already 
 <br>
 
 
-<!-- Registration -->
+<!-- Google Two Factor Authentication -->
 ### Google Two Factor Authentication
 Two factor authentication is essential for most websites as it enhances your security. Users are now able to use the Google Authenticator app as a secondary login security feature. Simply click on the security badge on the sidebar click generate secret key and follow the instructions to get setup!
 
@@ -182,7 +184,7 @@ Pragmarx Google2fa a password authentication package provides me with the abilit
 <br>
 <br>
 
-<!-- Login -->
+<!-- Docker -->
 ### Docker
 Docker allows me to create containers which contain my dependencies. It also provides the ability to run code in any environment. Docker has made it easier for me to build, deploy and manage containers.
 
@@ -208,7 +210,7 @@ To view them after resetting a registered users password visit http://localhost:
 <br>
 <br>
 
-<!-- Feed -->
+<!-- AWS Lightsail -->
 ### AWS Lightsail
 
 IMPORTANT: Docker will have the fully functioning website. AWS Lightsail will work for most features but does not have an email server. Also, it has not been fully tested so use Docker for most tasks.
@@ -236,6 +238,7 @@ To view my website simply visit http://18.170.36.139/ or https://18.170.36.139/ 
 <br>
 <br>
 
+<!-- Extra Implementations Information -->
 ## Extra Implementations Information
 * Factories and seeders were used to create fake users, posts and likes. Fake likes can be viewed on the profile page of the default user
 
@@ -284,6 +287,32 @@ To run tests simply run in the docker container:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- Reflective Analysis-->
+## Reflective Analysis
+
+I chose AWS Lightsail as the cloud platform of my choice as it is what I found simplest to use. To get setup I only had to do small amounts of configuration and it was rather quick. The part which took most time was waiting for the instances/databases to create which is not a huge issue! 
+
+To create my instances I had to simply select my platform (Linux) and host (Nginx). Next steps were simple such as generating an ssh key, region and plan etc. After this I was able to ssh to the server and clone my application. After creating the database and setting it up on my .env file then configuring HTTP/HTTPS I was pretty much complete. Furthermore, the process was really simple and did not have any issues which I have not encountered previously.
+
+Despite this, there were many alternatives such as Heroku which is supposedly more catered towards startups. Social media websites are resource intesive therefore AWS is the platform that can meet those high computational demands. Although mine wont go live, it would be very easy to scale and meet demands if for example my website were to receive more traction.
+
+I am of course in charge of security issues of my server such as not leaking the key etc. For the cloud itself I can be safe with AWS security and rely on them to manage the cloud infrastructure. Alternatively, if I had a physical server I would be responsible for its security which could be daunting. Another essential feature is snapshots to backup my server. This would be important for any issues that occur on the server and always having a backup to rely on. 
+
+As mentioned previously, one of the main reasons I picked Lightsail was due to its simplicity. However, there is another AWS service called EC2. EC2 overall is much more powerful than Lightsail and provides greater server and database performance. With EC2 I would have to manually do alot of the things that were simpler on Lightsail such as configuring settings and generating the ssh key. The added complexity of EC2 was not worth it for my goals, although if I required increase in performance, it would be the viable option.
+
+An improvement I could have done with Lightsail was to deploy my docker containers - as it would let me work with Mailhog and other dependencies which I have.
+
+<br>
+
+<div align="center">
+  <img src="readme_images/lightsail-vs-aws.png" alt="Test Success" width="500" height="">
+</div>
+
+<br>
+<br>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<br>
 
 <!-- CONTACT -->
 ## Contact
@@ -307,5 +336,6 @@ Most references are inlined within the code however here are some that assisted 
 * Akhtar Munir (2020). search with pagination is not working in laravel. [Answer]. Stackoverflow. https://stackoverflow.com/questions/61771858/search-with-pagination-is-not-working-in-laravel
 * Stephen Afam-Osemene (2020). How to Add Google's Two Factor Authentication to Laravel. https://www.digitalocean.com/community/tutorials/how-to-add-googles-two-factor-authentication-to-laravel
 * Akshay Krison (2021). How to Deploy Laravel APP on AWS LightSail. https://aws.plainenglish.io/deploy-laravel-app-on-aws-lightsail-with-nginx-instance-and-managed-mysql-db-643670e2e24d
+* Rakesh Soni (2017). What is difference between Lightsail and EC2?. [Answer]. Stackoverflow. https://stackoverflow.com/questions/40927189/what-is-difference-between-lightsail-and-ec2
 
 <p align="right">(<a href="#top">back to top</a>)</p>

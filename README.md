@@ -233,7 +233,7 @@ Currently, using the free tier as it is suitable for my needs. Again, I chose Ng
 
 <br>
 
-To view my website simply visit http://18.170.36.139/ or https://18.170.36.139/ (HTTPS)
+NOTE: NO LONGER DEPLOYED ON AWS!
 
 <br>
 <br>
